@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>HOTELS</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="{{ url_for('static', filename= 'css/reset.css') }}" type="text/css" media="all">
+<link rel="stylesheet" href="{{ url_for('static', filename= 'css/layout.css') }}" type="text/css" media="all">
+<link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}" type="text/css" media="all">
+<script type="text/javascript" src="{{ url_for('static', filename= 'js/jquery-1.4.2.js') }}" ></script>
+<script type="text/javascript" src="{{ url_for('static', filename= 'js/cufon-yui.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename= 'js/cufon-replace.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename= 'js/Myriad_Pro_600.font.js') }}"></script>
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/ie6_script_other.js"></script>
+<script type="text/javascript" src="js/html5.js"></script>
+<![endif]-->
+</head>
+<body id="pageH3">
+<!-- START PAGE SOURCE -->
+<div class="extra">
+  <div class="main">
+    <header>
+      <div class="wrapper">
+        <h1><a href="http://127.0.0.1:5000/hotel" id="logo">HOTELS</a></h1>
+        <div class="right">
+          <div class="wrapper">
+            <form id="search" action="#" method="post">
+              <div class="bg">
+                <input type="submit" class="submit" value="">
+                <input type="text" class="input">
+              </div>
+            </form>
+          </div>
+          <div class="wrapper">
+          </div>
+        </div>
+      </div>
+<div class="row-2">
+      <div class="indent">
+        <!-- header-box begin -->
+        <div class="header-box">
+          <div class="inner">
+      <nav>
+        <ul id="menu">
+          <li><a href="http://127.0.0.1:5000/hotel/hotel1" class="nav1">Descripcion</a></li>
+          <li><a href="http://127.0.0.1:5000/hotel/hotel1/reserva" class="nav2">Reservaciones </a></li>
+		  <li><a href="http://127.0.0.1:5000/hotel/hotel1/calificacion" class="nav3">Calificanos </a></li>
+          <li class="end"><a href="http://127.0.0.1:5000/hotel/hotel1/contactus" class="nav4">Contactanos</a></li>
+        </ul>
+      </nav>
+	  </div>
+    </div>
+	</div>
+    </div>
+    </header>
+	
+<article class="col2 pad_left1">
+        <h2>Reservaciones</h2>
+        <form id="ContactForm" action="#" method="POST">
+          <div>
+		     <div class="form-group">
+		  	 	  <label for="Nombres">Nombres: </label>
+   				  <INPUT type="text"onkeypress="return Letr(event)" class="form-group" name="Nombres" required id="Nombres" maxlength="50" size="50" value="{{ request.form['Nombres'] }}"></input> <br/>
+             </div>
+			  
+			<div class="form-group">
+                 <label for="Apellidos">Apellidos:</label>
+                 <INPUT type="text"onkeypress="return Letr(event)" class="input" name="Apellidos" required id="Apellidos" maxlength="50" size="50" value="{{ request.form['Apellidos'] }}"> </input> <br/>
+   		  	</div>
+            <div class="form-group">
+                <label for="email">E-mail:</label> 
+  				<INPUT type="email" class="input" name="Email" required id="email" value="{{ request.form['Email'] }}"><br/>
+            </div>
+			<div class="form-group">
+              <label for="Celular">Celular:</label>
+              <INPUT type="text"onkeypress="return Letr(event)" class="input" name="Celular" required id="Celular" maxlength="50" size="50"value="{{ request.json['Celular'] }}"><br/>
+            </div>
+			
+            <div class="form-group">
+              <label for="Habitaciones">Habitaciones:</label>
+              <INPUT type="number" class="input" name="Habitaciones" required id="Habitaciones" maxlength="2" size="50"value="{{ request.json['Habitaciones'] }}"><br/>
+            </div>
+
+        	<div class="form-group">
+        		<label for="start">Dia de reserva:</label>
+        		<input type="date" id="start" name="trip-start"
+                value="2021-08-09"
+                min="2021-01-01" max="2099-12-31">
+        	</div>
+            <div class="wrapper">
+			  Comentario Adicional:
+              <textarea name="Descripcion" cols="1" rows="1" value="{{ request.form['Descripcion']}}"> </textarea>
+              <br />
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button> </div>
+        </form>
+      </article>
+	
+  </div>
+  <div class="block"></div>
+</div>
+<script type="text/javascript"> Cufon.now(); </script>
+<!-- END PAGE SOURCE -->
+</body>
+</html>
